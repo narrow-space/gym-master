@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Body from '../Body/Body';
 import Menubar from '../Menubar/Menubar';
 
 const Home = () => {
@@ -7,6 +8,8 @@ const Home = () => {
         <div>
            <Menubar></Menubar>
             <Banner></Banner>
+            <Body></Body>
+            
         </div>
     );
 };

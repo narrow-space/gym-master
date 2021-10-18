@@ -8,6 +8,7 @@ import {
   Route,
   
 } from "react-router-dom";
+import Singledetails from './Components/Body/Singledetails/Singledetails';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path="/home">
           <Home></Home>
+          </Route>
+          <Route exact path="/details/:detailsId">
+          <Singledetails></Singledetails>
           </Route>
         </Switch>
       </Router>

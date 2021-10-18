@@ -8,9 +8,9 @@ import logo from '../../images/logo-3.svg'
 const Menubar = () => {
     return (
         <div  className=" header-container sticky-top bg-light">
-           <Navbar collapseOnSelect expand="lg" bg="" variant="light">
+           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container className="">
-  <Navbar.Brand to="#home"><img style={{"width":"150px"}} src={logo} alt="" /></Navbar.Brand>
+  <Navbar.Brand ><Link to="/home"><img style={{"width":"150px"}} src={logo} alt="" /> </Link> </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto p-2">

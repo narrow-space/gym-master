@@ -1,0 +1,49 @@
+.details-container{
+    background-image: url(../../../images//sven-mieke-MsCgmHuirDo-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    height: 110vh;
+   
+    
+}
+
+.details-container::before{
+    content: "";
+    background-image:url(../../../images//sven-mieke-MsCgmHuirDo-unsplash.jpg);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(82, 82, 82);
+    opacity: 0.2;
+    height: 110vh;
+}
+
+.icon i{
+    color: #DA0A0A;
+    font-size: 70px;
+   
+}
+
+
+.details-container h1{
+    letter-spacing: 5px;
+    margin-top: 50px;
+    color: white;
+}
+
+.text-container h4{
+    font-size: 50px;
+    margin-top: 50px;
+    color: white;
+    
+}
+
+.text-container h5{
+    margin-top: 50px;
+    letter-spacing: 3px;
+    color: white;
+}

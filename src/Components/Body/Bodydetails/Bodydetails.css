@@ -1,0 +1,28 @@
+.card-component{
+    margin-top: 100px;
+}
+
+.card-container{
+    width: 200%;
+    
+}
+.card-container h5,p{
+    font-size:20px;
+    letter-spacing:5px;
+}
+
+    
+.card-container .btn-1{
+    background-color: #E31C25;
+    columns: white;
+    border-radius: 0;
+    padding: 1rem;
+    font-size: 20px;
+    margin-right: 20px;
+    color: white;
+     border-radius:10px ;
+}
+.card-container .btn-1:hover{
+    background-color: #121111;
+    color: #FFFFFF;
+}
