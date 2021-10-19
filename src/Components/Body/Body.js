@@ -15,8 +15,9 @@ const Body = () => {
             .then(data => setdetails(data.slice(0, 4)))
     }, [])
     return (
-        <div className="body-container" >
-            <h5 className="text">VIEW OUR GALLERY</h5>
+        <Container>
+        <div className="body-container container" >
+            <h1 style={{"font-size":""}} className="mt-4 ">VIEW OUR GALLERY</h1>
             <div className="row">
 
 
@@ -33,7 +34,7 @@ const Body = () => {
             </div>
 
             <div id="extra-section">
-                <img src={logo1} alt="" />
+                <img className="img-fluid" src={logo1} alt="" />
 
             </div>
 
@@ -42,39 +43,44 @@ const Body = () => {
                     <div className="my-5 container">
 
                         <h1 id="line-1" className="d-flex">OVERVIEW & <span className="text-primary">CHALLENGE</span>​</h1>
-                        <h5 id=""className="d-sm-flex text-danger fw-bolder">How can I get athletic body?</h5>
-                        <p className="d-sm-flex"> 1. Strategies to Hone a MoreAthletic-looking Body</p>
-                        <p className="d-sm-flex">2.Combine weight training and high-intensity cardio.</p>
-                        <p className="d-sm-flex">3.Focus on dynamic exercises. .. </p>
-                        <p className="d-sm-flex">4.Take advantage of plyometrics, bodyweight moves, and agility work. </p>
-                        <p className="d-sm-flex">5. Up the reps, lighten the load.</p>
-                        <p className="d-sm-flex">6. Perfect your nutrition </p>
+                        <h4 id=""className="d-sm-flex text-danger fw-bolder">How can I get athletic body?</h4>
+                        <h4 className="d-sm-flex"> 1. Strategies to Hone a MoreAthletic-looking Body</h4>
+                        <h4 className="d-sm-flex">2.Combine weight training and high-intensity cardio.</h4>
+                        <h4 className="d-sm-flex">3.Focus on dynamic exercises. .. </h4>
+                        <h4 className="d-sm-flex">4.Take advantage of plyometrics, bodyweight moves, and agility work. </h4>
+                        <h4 className="d-sm-flex">5. Up the reps, lighten the load.</h4>
+                        <h4 className="d-sm-flex">6. Perfect your nutrition </h4>
                     </div>
 
+                    
+                     
+                       {/* <div className="my-5"> */}
 
-
-                       <div className="my-5">
-                       <Row className="">
+                           
+                       <Container>
+                       <Row className="img1">
                         <Col sm={6} >
-                            <div className="">
-                            <img className="extra-img" src={logo2} alt="" />
+                            <div className="container">
+                            <img className="img-fluid"  src={logo2} alt="" />
                             </div>
 
                         </Col>
                         <Col sm={6}>
-                            <div>
-                            <img src={logo3} alt="" />
+                            <div className="img2">
+                            <img style={{"height":"500px","marginBottom":"20px"}} className="img-fluid" src={logo3} alt="" />
                             </div>
 
                         </Col>
                     </Row>
-                       </div>
+                    </Container>
+                       {/* </div> */}
                    
-                    
+                       
                    
 
             </div>
         </div>
+        </Container>
     );
 };
 
