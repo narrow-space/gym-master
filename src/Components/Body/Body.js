@@ -38,10 +38,10 @@ const Body = () => {
             </div>
 
             <div>
-                <Container>
-                    <div className="my-5">
+               
+                    <div className="my-5 container">
 
-                        <h1 id="line-1" className="d-flex">OVERVIEW & <span className="text-">CHALLENGE</span>​</h1>
+                        <h1 id="line-1" className="d-flex">OVERVIEW & <span className="text-primary">CHALLENGE</span>​</h1>
                         <h5 id=""className="d-sm-flex text-danger fw-bolder">How can I get athletic body?</h5>
                         <p className="d-sm-flex"> 1. Strategies to Hone a MoreAthletic-looking Body</p>
                         <p className="d-sm-flex">2.Combine weight training and high-intensity cardio.</p>
@@ -53,20 +53,26 @@ const Body = () => {
 
 
 
-
-
-                    <Row className="my-5 g-4">
-                        <Col sm={6}>
-                            <img src={logo2} alt="" />
+                       <div className="my-5">
+                       <Row className="">
+                        <Col sm={6} >
+                            <div className="">
+                            <img className="extra-img" src={logo2} alt="" />
+                            </div>
 
                         </Col>
                         <Col sm={6}>
+                            <div>
                             <img src={logo3} alt="" />
+                            </div>
 
                         </Col>
                     </Row>
+                       </div>
+                   
+                    
+                   
 
-                </Container>
             </div>
         </div>
     );
