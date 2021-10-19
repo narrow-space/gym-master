@@ -28,10 +28,12 @@ const Menubar = () => {
     
     }
 
-    { user.email&& 
-       <span className="p-3">{user.email}</span>
+    { user?.email&& 
+       <span className="p-3">{user?.email}</span>
+       }
+      
     
-    }
+    
       <Link className="text-decoration-none p-3" to="/register"><span>Signup</span></Link>
       
     </Nav>
