@@ -2,6 +2,10 @@
     margin-top: 100px;
     
 }
+.body-container p{
+    font-size:1.5rem;
+    font-weight: 500;
+}
 
 .text{
     color: #111111;
@@ -12,3 +16,16 @@
     margin-bottom: 0;
     letter-spacing: 10px;
 }
+
+#extra-section{
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+
+#line-1{
+
+    font-size:70px;
+    letter-spacing: 10px;
+}
+

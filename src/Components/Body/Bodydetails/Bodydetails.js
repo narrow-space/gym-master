@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Bodydetails.css'
+
 const Bodydetails = (props) => {
     const {id,name,img,discription,price}= props.detail
     return (
@@ -23,6 +24,8 @@ const Bodydetails = (props) => {
           </Card.Text>
          <Link to={`/details/${id}`}><button className="btn btn-1">SHOW DETAILS</button></Link> 
         </Card.Body>
+
+        
       </div>
     
   ))}
@@ -32,9 +35,13 @@ const Bodydetails = (props) => {
 
             
         </div>
+
+       
         
         
     );
+
+    
 };
 
 export default Bodydetails;
