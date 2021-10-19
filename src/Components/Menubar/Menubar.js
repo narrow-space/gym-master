@@ -11,7 +11,7 @@ const Menubar = () => {
   const {user,logOut} =Useauth()
     return (
         <div  className=" header-container sticky-top bg-light">
-           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+           <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
   <Container className="">
   <Navbar.Brand ><Link to="/home"><img style={{"width":"150px"}} src={logo} alt="" /> </Link> </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -21,7 +21,7 @@ const Menubar = () => {
       <Link className="text-decoration-none p-3" to="/services"><span>Services</span></Link>
       <Link className="text-decoration-none p-3" to="/aboutus"><span>About us</span></Link>
       <Link className="text-decoration-none p-3" to="/contactus"><span>Contact us</span></Link>
-     { user.email? <button onClick={logOut} className="btn btn-warning">Logout</button>:
+     { user.email? <button onClick={logOut} className="btn btn-danger">Logout</button>:
        
      <Link className="text-decoration-none p-3" to="/login"><span>Login</span></Link>
      

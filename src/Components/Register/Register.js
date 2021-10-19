@@ -48,7 +48,7 @@ const Register = () => {
                         <Link to="/login"className="text-decoration-none"><p>Already have an account !! please log in</p></Link>
 
 
-                        <h4 className="text-center mt-3 already-btn">Already have an account?</h4>
+                        <h4 className="text-center mt-3 already-btn">Already have an account??</h4>
 
 
 

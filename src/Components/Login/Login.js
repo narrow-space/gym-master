@@ -4,6 +4,8 @@ import { Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import Menubar from '../../Components/Menubar/Menubar'
 import Useauth from '../../Hooks/Useauth';
+import Banner from '../Banner/Banner';
+import Footer from '../Footer/Footer';
 
 
 const Login = () => {
@@ -50,6 +52,7 @@ const Login = () => {
   return (
     <div className="">
       <Menubar />
+      <Banner/>
 
       <Row>
         <Col sm={8}></Col>
@@ -58,6 +61,7 @@ const Login = () => {
       <Row>
         <Col sm></Col>
         <Col sm={5}>
+          <h3 className="mt-3 text-info">Please Login</h3>
           <Form className="mt-5" onSubmit={EmailLogin}>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Email address</Form.Label>
@@ -83,6 +87,7 @@ const Login = () => {
         <Col sm></Col>
       </Row>
       <Link className="text-decoration-none" to="/register"><p>Are you new user please register</p></Link>
+      <Footer></Footer>
     </div>
 
   );

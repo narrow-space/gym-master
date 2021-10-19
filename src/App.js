@@ -14,6 +14,8 @@ import Register from './Components/Register/Register';
 import Authprovider from './Context/Authprovider';
 import Services from './Components/Services/Services';
 import Privateroute from './Components/Login/Privateroute/Privateroute';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -44,6 +46,17 @@ function App() {
          <Services></Services>
 
           </Privateroute>
+
+          <Route path="/aboutus">
+            <About>
+
+            </About>
+          </Route>
+          <Route path="/contactus">
+            <Contact>
+
+            </Contact>
+          </Route>
         </Switch>
       </Router>
 

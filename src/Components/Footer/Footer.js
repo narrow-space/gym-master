@@ -65,10 +65,11 @@ const Footer = () => {
               <li>8AM -2PM</li>
               <li>Closed</li>
           </ul>
+          
       </div>
     </Col>
   </Row>
-  
+  <p>Copyright 2021 IMRAN HASAN All Rights Reserved.</p>
         </div>
         
     );
