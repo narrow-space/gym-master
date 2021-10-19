@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import './Menubar.css'
 import logo from '../../images/logo-3.svg'
 
+import Useauth from '../../Hooks/Useauth';
+
 
 const Menubar = () => {
+  const {user,logOut} =Useauth()
     return (
         <div  className=" header-container sticky-top bg-light">
            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -15,11 +18,21 @@ const Menubar = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto p-2">
       <Link className="text-decoration-none p-3" to="/Home"><span> Home</span>  </Link>
-      <Link className="text-decoration-none p-3" to="/pricing"><span>Services</span></Link>
-      <Link className="text-decoration-none p-3" to="/pricing"><span>About us</span></Link>
-      <Link className="text-decoration-none p-3" to="/pricing"><span>Contact us</span></Link>
-      <Link className="text-decoration-none p-3" to="/pricing"><span>Login</span></Link>
-      <Link className="text-decoration-none p-3" to="/pricing"><span>Signup</span></Link>
+      <Link className="text-decoration-none p-3" to="/services"><span>Services</span></Link>
+      <Link className="text-decoration-none p-3" to="/aboutus"><span>About us</span></Link>
+      <Link className="text-decoration-none p-3" to="/contactus"><span>Contact us</span></Link>
+     { user.email? <button onClick={logOut} className="btn btn-warning">Logout</button>:
+       
+     <Link className="text-decoration-none p-3" to="/login"><span>Login</span></Link>
+     
+    
+    }
+
+    { user.email&& 
+       <span className="p-3">{user.email}</span>
+    
+    }
+      <Link className="text-decoration-none p-3" to="/register"><span>Signup</span></Link>
       
     </Nav>
    
