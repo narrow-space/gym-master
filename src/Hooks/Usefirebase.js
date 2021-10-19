@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged,signOut,GithubAuthProvider  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GithubAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initilizeAuthentication from "../Firebase/Firebase.init";
 
@@ -16,6 +16,7 @@ const Usefirebase = () => {
 
 
 
+
     const handleEmailChange = (e) => {
         console.log(e.target.value);
         setEmail(e.target.value);
@@ -30,6 +31,7 @@ const Usefirebase = () => {
 
 
     const EmailLogin = (e) => {
+        // setIsLoading(true)
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -45,16 +47,20 @@ const Usefirebase = () => {
                 console.log(UserInfo);
             })
             .catch((error) => {
-                const errorCode = error.code;
+
                 const errorMessage = error.message;
                 setError(errorMessage)
-              });
+            })
+
+
 
     }
 
 
     const Emailregister = (e) => {
+
         e.preventDefault();
+
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
@@ -86,44 +92,32 @@ const Usefirebase = () => {
             else {
                 setUser({})
             }
+
         });
         return () => unsubscribed
     }, [])
 
     const logOut = () => {
-        ;
+
+
         signOut(auth)
             .then(() => { })
-           
+
     }
 
     const GooglesignIn = () => {
-        signInWithPopup(auth, Googleprovider)
-            .then(result => {
-                const { email, displayName, photoURL } = result.user;
 
-                const UserInfo = {
-                    name: displayName,
-                    photo: photoURL,
-                    email: email
-                }
-                setUser(UserInfo)
-            })
+        return signInWithPopup(auth, Googleprovider)
+
+
 
     }
 
-    const Githubsignin=()=>{
-        signInWithPopup(auth,GithubProvider)
-        .then(result => {
-            const { email, displayName, photoURL } = result.user;
+    const Githubsignin = () => {
 
-            const UserInfo = {
-                name: displayName,
-                photo: photoURL,
-                email: email
-            }
-            setUser(UserInfo)
-        })
+        return signInWithPopup(auth, GithubProvider)
+
+
     }
 
 
@@ -132,7 +126,7 @@ const Usefirebase = () => {
 
     return {
 
-        
+
         handleEmailChange,
         handlepasswordchange,
         Emailregister,
@@ -141,8 +135,10 @@ const Usefirebase = () => {
         Githubsignin,
         logOut,
         user,
-        error
-        
+        error,
+       
+        setUser,
+
 
 
     }

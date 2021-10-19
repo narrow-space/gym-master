@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Authprovider from './Context/Authprovider';
 import Services from './Components/Services/Services';
+import Privateroute from './Components/Login/Privateroute/Privateroute';
 
 function App() {
   return (
@@ -28,18 +29,21 @@ function App() {
           <Route  path="/home">
           <Home></Home>
           </Route>
-          <Route  path="/details/:detailsId">
+          <Privateroute path="/details/:detailsId">
           <Singledetails></Singledetails>
-          </Route>
+          </Privateroute>
           <Route  path="/login">
           <Login></Login>
           </Route>
           <Route  path="/register">
           <Register></Register>
           </Route>
-          <Route path="/services">
+
+          <Privateroute path="/services">
+
          <Services></Services>
-          </Route>
+
+          </Privateroute>
         </Switch>
       </Router>
 

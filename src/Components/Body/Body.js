@@ -20,7 +20,7 @@ const Body = () => {
             {
                
  
-                      details.map(detail=> <Bodydetails detail={detail}></Bodydetails>
+                      details.map(detail=> <Bodydetails key={detail.key} detail={detail}></Bodydetails>
                     )
                 
 

@@ -3,7 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
    
-    height: 110vh;
+ 
    
     
 }
@@ -19,7 +19,7 @@
     right: 0;
     background: rgb(82, 82, 82);
     opacity: 0.2;
-    height: 110vh;
+    
 }
 
 .icon i{
