@@ -31,6 +31,7 @@ const Usefirebase = () => {
     const handlepasswordchange = (e) => {
         console.log(e.target.value);
         setpassword(e.target.value);
+       
     }
 
 
@@ -38,14 +39,19 @@ const Usefirebase = () => {
     const EmailLogin = (e) => {
         // setIsLoading(true)
         e.preventDefault();
+        if(password.length<6){
+            setError('password must be at least 6 characters long.')
+            return;
+        }
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
 
                 const user = result.user;
-              
+                window.location.reload(true)
                 setUser(user)
                 setError("")
                 console.log(user);
+               
             })
             .catch((error) => {
 
@@ -66,18 +72,27 @@ const Usefirebase = () => {
     const Emailregister = (e) => {
 
         e.preventDefault();
+        if(password.length<6){
+            setError('password must be at least 6 characters long.')
+            return;
+        }
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const user = result.user;
-                
                
+                const user = result.user;
+              window.location.reload(true)
+                
+              
 
 
                 console.log(user);
                 setUser(user)
+
                 setUserName()
+               
                 setError("")
+              
 
             })
             .catch(error => {
