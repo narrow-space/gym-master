@@ -22,13 +22,46 @@ const Usefirebase = () => {
     }
     
 
-   
+    const handleEmailChange = (e) => {
+        console.log(e.target.value);
+        setEmail(e.target.value);
 
-    
+    }
+
+    const handlepasswordchange = (e) => {
+        console.log(e.target.value);
+        setpassword(e.target.value);
+       
+    }
 
 
 
-    
+    const EmailLogin = (e) => {
+        // setIsLoading(true)
+        e.preventDefault();
+        if(password.length<6){
+            setError('password must be at least 6 characters long.')
+            return;
+        }
+        signInWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+
+                const user = result.user;
+                window.location.reload(true)
+                setUser(user)
+                setError("")
+                console.log(user);
+               
+            })
+            .catch((error) => {
+
+                const errorMessage = error.message;
+                setError(errorMessage)
+            })
+
+
+
+    }
 
     const setUserName=()=>{
         updateProfile(auth.currentUser,{displayName:name})
@@ -46,9 +79,9 @@ const Usefirebase = () => {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-               
-                const user = result.user;
-              window.location.reload(true)
+                  const user = result.user;
+                  window.location.reload(true)
+            
                 
               
 
@@ -112,10 +145,11 @@ const Usefirebase = () => {
     return {
 
 
+        handleEmailChange,
         handleNameChnage,
-        
+        handlepasswordchange,
         Emailregister,
-      
+        EmailLogin,
         GooglesignIn,
         Githubsignin,
         logOut,
