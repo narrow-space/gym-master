@@ -17,8 +17,10 @@ const Services = () => {
         <Banner></Banner>
         <div className="body-container" >
             
+            <div className="mt-3">
+            <h5 style={{"font-size":"50px","color":"#E31C25"}} >VIEW OUR SERVICES</h5>
+            </div>
             
-            <h5 className="text">VIEW OUR SERVICES</h5>
             <div className="row">
             
 
