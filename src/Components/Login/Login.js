@@ -1,4 +1,7 @@
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GithubAuthProvider,updateProfile } from "firebase/auth";
 
+
+import { useState } from 'react';
 import { Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import Menubar from '../../Components/Menubar/Menubar'
@@ -8,8 +11,12 @@ import Footer from '../Footer/Footer';
 
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setpassword] = useState('')
+  const [error, setError] = useState('')
+  const auth = getAuth();
 
-  const { user, EmailLogin, GooglesignIn, error, Githubsignin, setUser,handleEmailChange,handlepasswordchange } = Useauth();
+  const { user, GooglesignIn,  Githubsignin, setUser, } = Useauth();
   const location = useLocation();
   const history = useHistory()
   console.log("came from", location.state?.from);
@@ -25,6 +32,49 @@ const Login = () => {
         setUser(user)
       })
   }
+
+
+  const handleEmailChange = (e) => {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+
+}
+  const handlepasswordchange = (e) => {
+    console.log(e.target.value);
+    setpassword(e.target.value);
+   
+}
+
+
+
+  const EmailLogin = (e) => {
+    // setIsLoading(true)
+    e.preventDefault();
+    if(password.length<6){
+        setError('password must be at least 6 characters long.')
+        return;
+    }
+    signInWithEmailAndPassword(auth, email, password)
+        .then((result) => {
+         
+
+            const user = result.user;
+            
+            setUser(user)
+            history.push(redirect_uri)
+            setError("")
+            console.log(user);
+           
+        })
+        .catch((error) => {
+
+            const errorMessage = error.message;
+            setError(errorMessage)
+        })
+
+
+
+}
      
 
    const handleGithublogin=()=>{
