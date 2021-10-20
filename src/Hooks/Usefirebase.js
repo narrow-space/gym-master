@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GithubAuthProvider,updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initilizeAuthentication from "../Firebase/Firebase.init";
 
@@ -8,14 +8,18 @@ const Usefirebase = () => {
     const Googleprovider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider()
 
-
+    const [name,setName] =useState('')
     const [user, setUser] = useState({})
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('')
     const [error, setError] = useState('')
+    
 
+    const handleNameChnage=(e)=>{
+        setName(e.target.value)
 
-
+    }
+    
 
     const handleEmailChange = (e) => {
         console.log(e.target.value);
@@ -36,15 +40,11 @@ const Usefirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
 
-                const { email, displayName, photoURL } = result.user;
-                const UserInfo = {
-                    name: displayName,
-                    photo: photoURL,
-                    email: email
-                }
-                setUser(UserInfo)
+                const user = result.user;
+              
+                setUser(user)
                 setError("")
-                console.log(UserInfo);
+                console.log(user);
             })
             .catch((error) => {
 
@@ -56,6 +56,11 @@ const Usefirebase = () => {
 
     }
 
+    const setUserName=()=>{
+        updateProfile(auth.currentUser,{displayName:name})
+            .then(result=>{ })        
+    }
+
 
     const Emailregister = (e) => {
 
@@ -64,16 +69,13 @@ const Usefirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                const { email, displayName, photoURL } = result.user;
-                const UserInfo = {
-                    name: displayName,
-                    photo: photoURL,
-                    email: email
-                }
+                
+               
 
 
                 console.log(user);
-                setUser(UserInfo)
+                setUser(user)
+                setUserName()
                 setError("")
 
             })
@@ -128,6 +130,7 @@ const Usefirebase = () => {
 
 
         handleEmailChange,
+        handleNameChnage,
         handlepasswordchange,
         Emailregister,
         EmailLogin,

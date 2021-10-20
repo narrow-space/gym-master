@@ -20,14 +20,10 @@ const Login = () => {
        GooglesignIn()
       .then(result => {
         history.push(redirect_uri)
-        const { email, displayName, photoURL } = result.user;
+        const user = result.user;
 
-        const UserInfo = {
-          name: displayName,
-          photo: photoURL,
-          email: email
-        }
-        setUser(UserInfo)
+        
+        setUser(user)
       })
   }
      
@@ -37,14 +33,10 @@ const Login = () => {
     
     .then(result => {
        history.push(redirect_uri)
-      const { email, displayName, photoURL } = result.user;
+      const user = result.user;
 
-      const UserInfo = {
-          name: displayName,
-          photo: photoURL,
-          email: email
-      }
-      setUser(UserInfo)
+    
+      setUser(user)
   })
    }
 

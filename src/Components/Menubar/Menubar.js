@@ -28,8 +28,8 @@ const Menubar = () => {
     
     }
 
-    { user?.email&& 
-       <span className="p-3">{user?.email}</span>
+    { user.email && 
+       <span className="p-3">{user?.displayName}</span>
        }
       
     

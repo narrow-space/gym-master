@@ -15,7 +15,7 @@ const Body = () => {
             .then(data => setdetails(data.slice(0, 4)))
     }, [])
     return (
-        <Container>
+        
         <div className="body-container container" >
             <h1 style={{"font-size":""}} className="mt-4 ">VIEW OUR GALLERY</h1>
             <div className="row">
@@ -66,8 +66,8 @@ const Body = () => {
 
                         </Col>
                         <Col sm={6}>
-                            <div className="img2">
-                            <img style={{"height":"500px","marginBottom":"20px"}} className="img-fluid" src={logo3} alt="" />
+                            <div className="container">
+                            <img style={{"height":"500px","marginBottom":"20px","width":"400px"}} className="img-fluid" src={logo3} alt="" />
                             </div>
 
                         </Col>
@@ -80,7 +80,7 @@ const Body = () => {
 
             </div>
         </div>
-        </Container>
+        
     );
 };
 
