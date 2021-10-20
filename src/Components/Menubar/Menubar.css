@@ -3,3 +3,15 @@
     font-size: larger;
     font-weight: 600;
 }
+#hover:hover{
+    background-color: #E31C25;
+    color: white;
+    padding:1rem;
+   
+    
+}
+
+.toogle{
+    background-color: #E31C25;
+    font-style: white;
+}

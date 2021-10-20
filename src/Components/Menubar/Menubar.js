@@ -14,27 +14,30 @@ const Menubar = () => {
            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
   <Container className="">
   <Navbar.Brand ><Link to="/home"><img style={{"width":"150px"}} src={logo} alt="" /> </Link> </Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+           
+           
+  
+  <Navbar.Toggle className="toogle" aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto p-2">
-      <Link className="text-decoration-none p-3" to="/Home"><span> Home</span>  </Link>
-      <Link className="text-decoration-none p-3" to="/services"><span>Services</span></Link>
-      <Link className="text-decoration-none p-3" to="/aboutus"><span>About us</span></Link>
-      <Link className="text-decoration-none p-3" to="/contactus"><span>Contact us</span></Link>
+      <Link className="text-decoration-none p-3" to="/Home"><span id="hover"> Home</span>  </Link>
+      <Link className="text-decoration-none p-3" to="/services"><span id="hover">Services</span></Link>
+      <Link className="text-decoration-none p-3" to="/aboutus"><span id="hover">About us</span></Link>
+      <Link className="text-decoration-none p-3" to="/contactus"><span id="hover">Contact us</span></Link>
      { user.email? <button onClick={logOut} className="btn btn-danger">Logout</button>:
        
-     <Link className="text-decoration-none p-3" to="/login"><span>Login</span></Link>
+     <Link className="text-decoration-none p-3" to="/login"><span id="hover">Login</span></Link>
      
     
     }
 
-    { user.email && 
-       <span className="p-3">{user?.displayName}</span>
+    { user?.email && 
+       <span id="hover" className="p-3">{user.displayName}</span>
        }
       
     
     
-      <Link className="text-decoration-none p-3" to="/register"><span>Signup</span></Link>
+      <Link className="text-decoration-none p-3" to="/register"><span id="hover">Signup</span></Link>
       
     </Nav>
    

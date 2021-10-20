@@ -4,15 +4,16 @@ import initilizeAuthentication from "../Firebase/Firebase.init";
 
 initilizeAuthentication();
 const Usefirebase = () => {
-    const auth = getAuth();
-    const Googleprovider = new GoogleAuthProvider();
-    const GithubProvider = new GithubAuthProvider()
-
     const [name,setName] =useState('')
     const [user, setUser] = useState({})
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('')
     const [error, setError] = useState('')
+    const auth = getAuth();
+    const Googleprovider = new GoogleAuthProvider();
+    const GithubProvider = new GithubAuthProvider()
+
+   
     
 
     const handleNameChnage=(e)=>{

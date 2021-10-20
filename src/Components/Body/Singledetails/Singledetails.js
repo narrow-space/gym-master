@@ -29,7 +29,7 @@ const Singledetails = () => {
              <Row>
     <Col sm={6}>
     <div className="mt-5 text-container">
-    <h1 className="text-danger"><span>{founddetails?.name}</span></h1>
+    <h1 id="name-text"><span>{founddetails?.name}</span></h1>
     <h5 >{founddetails?.discription}</h5>
     <h4 className="me-2">Price:<i className="fas fa-dollar-sign me-2"></i>{founddetails?.price}</h4>
     <h4>FOLLOW US</h4>
