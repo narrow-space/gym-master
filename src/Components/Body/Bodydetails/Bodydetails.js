@@ -20,7 +20,7 @@ const Bodydetails = (props) => {
           <Card.Title> <h5>{name}</h5> </Card.Title>
           
           <Card.Text>
-            <p>Price:${price}</p>
+            <p>{discription.slice(0,100)}</p>
           </Card.Text>
          <Link to={`/details/${id}`}><button className="btn btn-1">SHOW DETAILS</button></Link> 
         </Card.Body>
