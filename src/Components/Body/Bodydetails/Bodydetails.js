@@ -15,7 +15,14 @@ const Bodydetails = (props) => {
   {Array.from({ length:1 }).map((_, idx) => (
    
       <div className="card-container">
-        <Card.Img variant="top" src={img} />
+        <div className="box">
+
+       
+        <div className="img-box" >
+        <img src={img} alt="" />
+        </div>
+        </div>
+        
         <Card.Body>
           <Card.Title> <h5>{name}</h5> </Card.Title>
           
